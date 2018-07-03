@@ -386,7 +386,7 @@ Packet::Tag2::Ptr primary_key_binding(const Args & args, const PublicKey & signe
 
     // get signee primary and subkey
     Packet::Tag6::Ptr signee_primary = nullptr;
-    for(Packet::Tag::Ptr const & p : args.pri.get_packets()){
+    for(Packet::Tag::Ptr const & p : signee.get_packets()){
         if (p -> get_tag() == Packet::PUBLIC_KEY){
             signee_primary = std::static_pointer_cast <Packet::Tag6> (p);
             break;
